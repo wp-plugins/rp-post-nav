@@ -1,0 +1,144 @@
+.rp-post-nav {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.rp-post-nav .rp-post-nav-pre, .rp-post-nav .rp-post-nav-next {
+  background-attachment: fixed;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.rp-post-nav  .rp-post-nav-wrap {
+	padding: 5% 10%;
+}
+.rp-post-nav  .rp-glass .rp-post-nav-wrap::before {
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+	transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;
+}
+.rp-post-nav  .rp-post-nav-pre.rp-glass .rp-post-nav-wrap::before {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+}
+.rp-post-nav  .rp-post-nav-next.rp-glass .rp-post-nav-wrap::before {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+}
+.rp-post-nav  .rp-post-nav-pre.rp-glass .rp-post-nav-wrap:hover::before {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+}
+.rp-post-nav  .rp-post-nav-next.rp-glass .rp-post-nav-wrap:hover::before {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.rp-post-nav-content {
+    display: block;
+    margin: auto;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.rp-post-nav .rp-post-nav-label {
+    font-size: 20px;
+    margin-bottom: 5px;
+	position: relative;
+    z-index: 2;
+}
+.rp-post-nav .rp-glass  .rp-post-nav-label {
+    color: #fff;
+}
+
+.rp-post-nav .rp-post-nav-thumbnail {
+    display: block;
+    float: left;
+    margin-right: 15px;
+	margin-bottom: 15px;
+	position: relative;
+    z-index: 2;
+}
+.rp-post-nav-thumbnail img {
+    border: 5px solid #fff;
+    box-sizing: border-box;
+}
+
+.rp-post-nav .rp-post-nav-text {
+    display: block;
+	overflow: hidden;
+	max-width: 100%;
+	position: relative;
+    z-index: 2;
+}
+
+.rp-post-nav .rp-post-nav-title {
+    display: block;
+    margin: 0 0 5px;
+    overflow: hidden;
+    padding: 0 0 3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.rp-post-nav .rp-glass .rp-post-nav-title {
+	color: #fff;
+}
+.rp-post-nav .rp-post-nav-title a {
+    text-decoration: none;
+	border: none;
+	font-size: 28px;
+}
+
+.rp-post-nav .rp-post-nav-text p {
+    font-size: 12px;
+    margin: 0;
+}
+.rp-post-nav  .rp-post-nav-text a {
+    border: medium none;
+}
+.rp-post-nav .rp-glass .rp-post-nav-text a, .rp-post-nav .rp-glass .rp-post-nav-text p {
+    color: #fff;
+}
+
+/* Desktops, laptops and iPads (landscape) ----------- */
+
+@media only screen and (max-width: 1024px) {
+
+}
+
+/* iPads (portrait) ----------- */
+@media(min-width: 768px) and (max-width: 979px){
+
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+/* iPhones (portrait and landscape) ----------- */
+
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (max-width: 320px) {
+
+}
