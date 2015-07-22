@@ -153,21 +153,20 @@
           <div class="rp-box-title">Select Post Types</div>
           <div class="rp-box-text"><p>Registered post types that will be used.</p>
             <ul><?php 
-            $post_args = array(
-               'show_ui' => true,
-               'public' => true
+            $post_args = array(
+               'show_ui' => true,
+               'public' => true
             );
-            $post_output = 'names'; // names or objects, note names is the default
-            $post_operator = 'and'; // 'and' or 'or'
+            $post_output = 'names'; // names or objects, note names is the default
+            $post_operator = 'and'; // 'and' or 'or'
             $post_types = get_post_types( $post_args, $post_output, $post_operator );
             if(!empty($post_types)){
-            foreach ( $post_types as $post_type ) { 
-              $post_type_object = get_post_type_object($post_type);
-              $post_singular = $post_type_object->labels->singular_name;
-              $post_plural = $post_type_object->labels->name;
-            ?>
-              <li><input type="checkbox" name="custom_post_type[]" value="<?php echo $post_type; ?>" <?php echo is_array($post_type, $settings['custom_post_type'], true) || in_array($post_type, $settings['custom_post_type'], true)? 'checked="checked"': '' ; ?>  /> <span class="post-type-label"><?php echo $post_plural; ?></span></li>
-            <?php }
+				foreach ( $post_types as $post_type ) { 
+				$post_type_object = get_post_type_object($post_type);
+				$post_singular = $post_type_object->labels->singular_name;
+				$post_plural = $post_type_object->labels->name;								$custom_post_type_array = !empty($settings['custom_post_type']) ? $settings['custom_post_type'] : 'post' ;				if(is_array($custom_post_type_array)) {					$custom_post_type_checker = in_array($post_type, $custom_post_type_array, true) ? 'checked' : '';
+				}				else {					$custom_post_type_checker = $post_type == $custom_post_type_array ? 'checked' : '';
+				}								echo '<li><input type="checkbox" name="custom_post_type[]" value="'.$post_type.'" '.$custom_post_type_checker.' /> <span class="post-type-label">'.$post_plural.'</span></li>';				}
             }
             else {
               echo '<li>No Registered Post Type</li>';
@@ -183,21 +182,20 @@
           <div class="rp-box-title">Select Taxonomies</div>
           <div class="rp-box-text"><p>Registered taxonomies that will be used.</p>
             <ul><?php 
-            $tax_args = array(
-               'show_ui' => true,
-               'public' => true
+            $tax_args = array(
+               'show_ui' => true,
+               'public' => true
             );
-            $tax_output = 'names'; // names or objects, note names is the default
-            $tax_operator = 'and'; // 'and' or 'or'
+            $tax_output = 'names'; // names or objects, note names is the default
+            $tax_operator = 'and'; // 'and' or 'or'
             $taxonomies = get_taxonomies( $tax_args, $tax_output, $tax_operator );
             if ( !empty($taxonomies) ) {
-              foreach ( $taxonomies  as $taxonomy ) { 
-              $taxonomy_object = get_taxonomy($taxonomy);
-              $tax_singular = $taxonomy_object->labels->singular_name;
-              $tax_plural = $taxonomy_object->labels->name;
-              ?>
-              <li><input type="checkbox" name="custom_taxonomy[]" value="<?php echo $taxonomy; ?>" <?php echo is_array($taxonomy, $settings['custom_taxonomy'], true) || in_array($taxonomy, $settings['custom_taxonomy'], true)? 'checked="checked"': '' ; ?>  /> <span class="taxonomy-label"><?php echo $tax_plural; ?></span></li>
-            <?php   }
+                foreach ( $taxonomies  as $taxonomy ) { 
+					$taxonomy_object = get_taxonomy($taxonomy);
+					$tax_singular = $taxonomy_object->labels->singular_name;
+					$tax_plural = $taxonomy_object->labels->name;				  					$taxonomy_array = !empty($settings['custom_taxonomy']) ? $settings['custom_taxonomy'] : 'post' ;					if(is_array($taxonomy_array)) {						$taxonomy_checker = in_array($taxonomy, $taxonomy_array, true) ? 'checked' : '';					}					else {						$taxonomy_checker = '';					}
+					echo '<li><input type="checkbox" name="custom_taxonomy[]" value="'.$taxonomy.'" '.$taxonomy_checker.' /> <span class="taxonomy-label">'.$tax_plural.'</span></li>';
+				}
             }
             else {
               echo '<li>No Registered Taxonomy</li>';

@@ -2,8 +2,8 @@
 /**
 * Plugin Name: RP Post Nav
 * Plugin URI: http://www.rplofino.freehosting007.com/rp-post-nav
-* Description: RP Post Nav display the Next/Previous Post Title, Thumbnail, Excerpt, Etc... and other custom functionality.
-* Version: 1.0.0
+* Description: RP Post Nav display the Next/Previous Post Title, Thumbnail, Excerpt and other custom functionality.
+* Version: 1.1
 * Author: Rommel Plofino
 * Author URI: http://www.rplofino.freehosting007.com/
 * Network: false
@@ -18,7 +18,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 /*Check Version*/
 global $wp_version;
 $exit_msg="WP Requires Latest version, Your version is old";
-if(version_compare($wp_version, "3.0", "<"))
+if(version_compare($wp_version, "3.6", "<"))
 {
 	exit($exit_msg);
 }
